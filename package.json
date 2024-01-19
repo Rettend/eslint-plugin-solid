@@ -85,6 +85,12 @@
   "peerDependencies": {
     "eslint": "^6.0.0 || ^7.0.0 || ^8.0.0"
   },
+  "lint-staged": {
+    "*!(test).{js,jsx,ts,tsx}": [
+      "eslint --ignore-pattern test/fixture/invalid --fix",
+      "prettier --write"
+    ]
+  },
   "prettier": {
     "printWidth": 100
   }
