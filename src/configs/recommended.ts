@@ -43,4 +43,4 @@ const recommended = {
   },
 };
 
-export = recommended;
+export default recommended;

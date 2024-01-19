@@ -1,5 +1,6 @@
 import { TSESTree as T, ESLintUtils } from "@typescript-eslint/utils";
 import { getFunctionName, type FunctionNode } from "../utils";
+import { RuleWithMeta } from "@typescript-eslint/utils/eslint-utils";
 
 const createRule = ESLintUtils.RuleCreator.withoutDocs;
 
@@ -19,7 +20,8 @@ const isNothing = (node?: T.Node): boolean => {
 
 const getLineLength = (loc: T.SourceLocation) => loc.end.line - loc.start.line + 1;
 
-export default createRule({
+// Use the MyRule type for the rule
+const rule: Readonly<RuleWithMeta<[], "noEarlyReturn" | "noConditionalReturn">> = {
   meta: {
     type: "problem",
     docs: {
@@ -195,4 +197,6 @@ export default createRule({
       },
     };
   },
-});
+};
+
+export default createRule(rule) as RuleWithMeta<[], "noEarlyReturn" | "noConditionalReturn">;

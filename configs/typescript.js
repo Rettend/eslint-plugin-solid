@@ -1,1 +1,1 @@
-module.exports = require("../dist/configs/typescript");
+export * from "../dist/configs/typescript";

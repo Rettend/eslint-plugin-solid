@@ -1,1 +1,1 @@
-module.exports = require("../dist/configs/recommended");
+export * from "../dist/configs/recommended";

@@ -2,6 +2,7 @@ import { plugin } from "./plugin";
 import recommendedConfig from "./configs/recommended";
 import typescriptConfig from "./configs/typescript";
 
+// Use the Config type for the recommended config
 const pluginLegacy = {
   rules: plugin.rules,
   configs: {
@@ -27,5 +28,5 @@ const pluginLegacy = {
     },
   },
 };
-// Must be module.exports for eslint to load everything
-module.exports = pluginLegacy;
+
+export default pluginLegacy;

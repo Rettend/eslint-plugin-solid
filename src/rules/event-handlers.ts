@@ -1,5 +1,6 @@
 import { TSESTree as T, ESLintUtils, ASTUtils } from "@typescript-eslint/utils";
 import { isDOMElementName } from "../utils";
+import { RuleWithMeta } from "@typescript-eslint/utils/eslint-utils";
 
 const createRule = ESLintUtils.RuleCreator.withoutDocs;
 const { getStaticValue } = ASTUtils;
@@ -101,7 +102,7 @@ type MessageIds =
   | "spread-handler";
 type Options = [{ ignoreCase?: boolean; warnOnSpread?: boolean }?];
 
-export default createRule<Options, MessageIds>({
+const rule: Readonly<RuleWithMeta<Options, MessageIds>> = {
   meta: {
     type: "problem",
     docs: {
@@ -298,4 +299,6 @@ export default createRule<Options, MessageIds>({
       },
     };
   },
-});
+};
+
+export default createRule<Options, MessageIds>(rule) as Readonly<RuleWithMeta<Options, MessageIds>>;

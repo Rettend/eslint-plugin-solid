@@ -15,4 +15,4 @@ const typescript = {
   },
 };
 
-export = typescript;
+export default typescript;
