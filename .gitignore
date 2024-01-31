@@ -1,5 +1,5 @@
 # Build directory
-# dist
+dist
 standalone/dist.mjs
 standalone/dist.mjs.map
 

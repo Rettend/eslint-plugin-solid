@@ -27,7 +27,8 @@
     "test:babel": "PARSER=babel pnpm test",
     "test:v6": "PARSER=v6 pnpm test",
     "test:v7": "PARSER=v7 pnpm test",
-    "test:all": "PARSER=all pnpm test"
+    "test:all": "PARSER=all pnpm test",
+    "prepack": "unbuild"
   },
   "files": [
     "src",
